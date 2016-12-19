@@ -1,0 +1,42 @@
+@mixin rotator($deg) {
+    -webkit-transform: rotate($deg);
+        -ms-transform: rotate($deg);
+            transform: rotate($deg);
+}
+@mixin translate_x($value) {
+    -webkit-transform: translateX($value);
+        -ms-transform: translateX($value);
+            transform: translateX($value);
+}
+@mixin translate_y($value) {
+    -webkit-transform: translateY($value);
+        -ms-transform: translateY($value);
+            transform: translateY($value);
+}
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+        -ms-transform: translate($x, $y);
+            transform: translate($x, $y);
+}
+@mixin align_vertically {
+    position: absolute;
+    top: 50%;
+    @include translate_y(-50%);
+}
+@mixin align_totally {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+}
+@mixin bg_img($bg-size: cover, $bg-position: center, $bg-repeat: no-repeat) {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-size: $bg-size;
+    background-position: $bg-position;
+    background-repeat: $bg-repeat;
+}
