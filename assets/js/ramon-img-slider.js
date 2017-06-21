@@ -35,15 +35,17 @@ var ramonSlider = function(slides, prev, next, transition) {
         },
         moveToNext: function() {
             var thisObject = this;
-            this.next.on('click', function() {
+            this.next.on('click', function(e) {
+                e.preventDefault();
                 window.clearInterval(thisObject.interval);
                 thisObject.currentIndex++;
                 thisObject.moveOne();              
             });
         },
-        movetoPrev: function() {
+        moveToPrev: function() {
             var thisObject = this;
-            this.prev.on('click', function() {
+            this.prev.on('click', function(e) {
+                e.preventDefault();
                 window.clearInterval(thisObject.interval);
                 thisObject.currentIndex--;
                 if (thisObject.currentIndex < 0) {
@@ -59,7 +61,7 @@ var ramonSlider = function(slides, prev, next, transition) {
         imgSlider.moveOne();
         imgSlider.autoSlide();
         imgSlider.moveToNext();
-        imgSlider.movetoPrev();
+        imgSlider.moveToPrev();
     }
     return init();
 };
