@@ -18,12 +18,17 @@
         -ms-transform: translate($x, $y);
             transform: translate($x, $y);
 }
-@mixin align_vertically {
+@mixin align_x {
+    position: absolute;
+    left: 50%;
+    @include translate_x(-50%);
+}
+@mixin align_y {
     position: absolute;
     top: 50%;
     @include translate_y(-50%);
 }
-@mixin align_totally {
+@mixin align_xy {
     position: absolute;
     top: 50%;
     left: 50%;
